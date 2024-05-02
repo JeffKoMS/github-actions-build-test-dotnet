@@ -12,7 +12,7 @@ namespace Prime.Services
         } */
         
         // Pass test code block
-        public bool IsPrime(int candidate)
+        /* public bool IsPrime(int candidate)
         {
             if (candidate < 2)
             {
@@ -27,6 +27,6 @@ namespace Prime.Services
                 }
             }
             return true;
-        }
+        } */
     }
 }
