@@ -1,8 +1,6 @@
 name: Bulid and test
 
 on:
-  # push:
-    # branches: [ "main" ]
   pull_request:
     types: [opened, synchronize, reopened]
     branches: [ "main" ]
@@ -12,5 +10,15 @@ jobs:
     if: startsWith(github.head_ref, 'test/')
     runs-on: ubuntu-latest
     steps:
-      - run: echo "getting started"
+      - uses: actions/checkout@v4
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build
+      - name: Test with the dotnet CLI
+        run: dotnet test
 
