@@ -11,6 +11,7 @@ namespace Prime.Services
             throw new NotImplementedException("Not implemented.");
         }
         
+        
         // Pass test code block
         /* public bool IsPrime(int candidate)
         {
