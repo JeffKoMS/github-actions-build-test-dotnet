@@ -6,9 +6,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    if:
-        contains('
-          refs/heads/test', github.ref)
     steps:
       - uses: actions/checkout@v4
       - name: Setup dotnet
