@@ -1,17 +1,11 @@
 name: Bulid and test
 
-on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [ "main" ]
+on: push
 
 jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    if:
-        contains('
-          refs/heads/test', github.ref)
     steps:
       - uses: actions/checkout@v4
       - name: Setup dotnet
