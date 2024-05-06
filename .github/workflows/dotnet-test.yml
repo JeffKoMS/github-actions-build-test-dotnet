@@ -6,9 +6,12 @@ on:
     branches: [ "main" ]
 
 jobs:
-  run_if:
-    if: contains('refs/head/test/', github.ref)
+  test:
+    name: Test
     runs-on: ubuntu-latest
+    if:
+        contains('
+          refs/heads/test', github.ref)
     steps:
       - uses: actions/checkout@v4
       - name: Setup dotnet
